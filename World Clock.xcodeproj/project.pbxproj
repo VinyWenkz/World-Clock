@@ -14,6 +14,12 @@
 		FCD73DC21B5E381A00F89BFB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCD73DC11B5E381A00F89BFB /* Images.xcassets */; };
 		FCD73DC51B5E381A00F89BFB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD73DC31B5E381A00F89BFB /* LaunchScreen.xib */; };
 		FCD73DD11B5E381A00F89BFB /* World_ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD73DD01B5E381A00F89BFB /* World_ClockTests.swift */; };
+		FCD73DDE1B5E3BC400F89BFB /* NSUserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD73DDD1B5E3BC400F89BFB /* NSUserDefaultsService.swift */; };
+		FCD73DE01B5E3D9600F89BFB /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD73DDF1B5E3D9600F89BFB /* City.swift */; };
+		FCD73DE21B5E3E4500F89BFB /* WorldClockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD73DE11B5E3E4500F89BFB /* WorldClockController.swift */; };
+		FCD73DE71B5E41A200F89BFB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD73DE61B5E41A200F89BFB /* Constants.swift */; };
+		FCD73DE91B5E421900F89BFB /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD73DE81B5E421900F89BFB /* Protocol.swift */; };
+		FCD73DED1B5E534D00F89BFB /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCD73DEC1B5E534D00F89BFB /* Cities.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +44,12 @@
 		FCD73DCA1B5E381A00F89BFB /* World ClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "World ClockTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD73DCF1B5E381A00F89BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCD73DD01B5E381A00F89BFB /* World_ClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World_ClockTests.swift; sourceTree = "<group>"; };
+		FCD73DDD1B5E3BC400F89BFB /* NSUserDefaultsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsService.swift; sourceTree = "<group>"; };
+		FCD73DDF1B5E3D9600F89BFB /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		FCD73DE11B5E3E4500F89BFB /* WorldClockController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldClockController.swift; sourceTree = "<group>"; };
+		FCD73DE61B5E41A200F89BFB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FCD73DE81B5E421900F89BFB /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		FCD73DEC1B5E534D00F89BFB /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +91,11 @@
 		FCD73DB51B5E381A00F89BFB /* World Clock */ = {
 			isa = PBXGroup;
 			children = (
+				FCD73DE51B5E419500F89BFB /* Utils */,
+				FCD73DDC1B5E3B8E00F89BFB /* Model */,
+				FCD73DDB1B5E3B8000F89BFB /* Controller */,
+				FCD73DDA1B5E3B7100F89BFB /* View */,
 				FCD73DB81B5E381A00F89BFB /* AppDelegate.swift */,
-				FCD73DBA1B5E381A00F89BFB /* MasterViewController.swift */,
-				FCD73DBC1B5E381A00F89BFB /* DetailViewController.swift */,
 				FCD73DBE1B5E381A00F89BFB /* Main.storyboard */,
 				FCD73DC11B5E381A00F89BFB /* Images.xcassets */,
 				FCD73DC31B5E381A00F89BFB /* LaunchScreen.xib */,
@@ -93,6 +107,7 @@
 		FCD73DB61B5E381A00F89BFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FCD73DEC1B5E534D00F89BFB /* Cities.plist */,
 				FCD73DB71B5E381A00F89BFB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -113,6 +128,41 @@
 				FCD73DCF1B5E381A00F89BFB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCD73DDA1B5E3B7100F89BFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCD73DBA1B5E381A00F89BFB /* MasterViewController.swift */,
+				FCD73DBC1B5E381A00F89BFB /* DetailViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		FCD73DDB1B5E3B8000F89BFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FCD73DE11B5E3E4500F89BFB /* WorldClockController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		FCD73DDC1B5E3B8E00F89BFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCD73DDD1B5E3BC400F89BFB /* NSUserDefaultsService.swift */,
+				FCD73DDF1B5E3D9600F89BFB /* City.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FCD73DE51B5E419500F89BFB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FCD73DE61B5E41A200F89BFB /* Constants.swift */,
+				FCD73DE81B5E421900F89BFB /* Protocol.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +248,7 @@
 				FCD73DC01B5E381A00F89BFB /* Main.storyboard in Resources */,
 				FCD73DC51B5E381A00F89BFB /* LaunchScreen.xib in Resources */,
 				FCD73DC21B5E381A00F89BFB /* Images.xcassets in Resources */,
+				FCD73DED1B5E534D00F89BFB /* Cities.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +269,11 @@
 				FCD73DBD1B5E381A00F89BFB /* DetailViewController.swift in Sources */,
 				FCD73DBB1B5E381A00F89BFB /* MasterViewController.swift in Sources */,
 				FCD73DB91B5E381A00F89BFB /* AppDelegate.swift in Sources */,
+				FCD73DE91B5E421900F89BFB /* Protocol.swift in Sources */,
+				FCD73DE01B5E3D9600F89BFB /* City.swift in Sources */,
+				FCD73DE71B5E41A200F89BFB /* Constants.swift in Sources */,
+				FCD73DDE1B5E3BC400F89BFB /* NSUserDefaultsService.swift in Sources */,
+				FCD73DE21B5E3E4500F89BFB /* WorldClockController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
