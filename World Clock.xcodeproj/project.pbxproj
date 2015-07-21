@@ -19,7 +19,7 @@
 		FCD73DE21B5E3E4500F89BFB /* WorldClockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD73DE11B5E3E4500F89BFB /* WorldClockController.swift */; };
 		FCD73DE71B5E41A200F89BFB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD73DE61B5E41A200F89BFB /* Constants.swift */; };
 		FCD73DE91B5E421900F89BFB /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD73DE81B5E421900F89BFB /* Protocol.swift */; };
-		FCD73DED1B5E534D00F89BFB /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCD73DEC1B5E534D00F89BFB /* Cities.plist */; };
+		FCD73DEF1B5E568E00F89BFB /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCD73DEE1B5E568E00F89BFB /* Cities.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 		FCD73DE11B5E3E4500F89BFB /* WorldClockController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldClockController.swift; sourceTree = "<group>"; };
 		FCD73DE61B5E41A200F89BFB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FCD73DE81B5E421900F89BFB /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
-		FCD73DEC1B5E534D00F89BFB /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
+		FCD73DEE1B5E568E00F89BFB /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +107,8 @@
 		FCD73DB61B5E381A00F89BFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FCD73DEC1B5E534D00F89BFB /* Cities.plist */,
 				FCD73DB71B5E381A00F89BFB /* Info.plist */,
+				FCD73DEE1B5E568E00F89BFB /* Cities.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -248,7 +248,7 @@
 				FCD73DC01B5E381A00F89BFB /* Main.storyboard in Resources */,
 				FCD73DC51B5E381A00F89BFB /* LaunchScreen.xib in Resources */,
 				FCD73DC21B5E381A00F89BFB /* Images.xcassets in Resources */,
-				FCD73DED1B5E534D00F89BFB /* Cities.plist in Resources */,
+				FCD73DEF1B5E568E00F89BFB /* Cities.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
