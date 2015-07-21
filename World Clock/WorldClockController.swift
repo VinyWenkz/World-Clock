@@ -25,7 +25,7 @@ class  WorldClockController {
         return WorldClockControllerSingleton.worldClockSingletonInstance
     }
     
-    func loadCitiesInPList() -> [City] {
+    private func loadCitiesInPList() -> [City] {
         var citiesDictionaryArray: [NSDictionary]?
         var cityList = [City]()
         if let path = NSBundle.mainBundle().pathForResource(Constants.CITY_PLIST_FILENAME,
@@ -39,8 +39,8 @@ class  WorldClockController {
                         country: cityDictionary.objectForKey(Constants.CITY_PLIST_COUNTRY_KEY) as! String,
                         timeZone: NSTimeZone(forSecondsFromGMT: cityDictionary.objectForKey(Constants.CITY_PLIST_TIME_ZONE_KEY) as! Int),
                         link: cityDictionary.objectForKey(Constants.CITY_PLIST_LINK_KEY) as! String,
-                        imageName: cityDictionary.objectForKey(Constants.CITY_PLIST_IMAGE_KEY) as! String))
-                    
+                        imageName: cityDictionary.objectForKey(Constants.CITY_PLIST_IMAGE_KEY) as! String,
+                        selected: nsUserDefaultsInstance!.isCitySelected(cityDictionary.objectForKey(Constants.CITY_PLIST_NAME_KEY) as! String)))
                 }
                 return cityList
     

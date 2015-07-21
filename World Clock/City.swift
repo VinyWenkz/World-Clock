@@ -14,13 +14,16 @@ class City: NSObject {
     var timeZone: NSTimeZone
     var link: String
     var imageName: String
+    var selected: Bool
     
-    init(name: String, country: String, timeZone: NSTimeZone, link: String, imageName: String) {
+    init(name: String, country: String, timeZone: NSTimeZone, link: String,
+        imageName: String, selected: Bool) {
         self.name = name
         self.country = country
         self.timeZone = timeZone
         self.link = link
         self.imageName = imageName
+        self.selected = selected
     }
 
 }

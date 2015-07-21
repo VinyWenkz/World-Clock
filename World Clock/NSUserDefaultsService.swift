@@ -36,6 +36,13 @@ class NSUserDefaultsService: NSObject {
             cityCrudDelegate.cityRemoved?()
         }
     }
+
+    func isCitySelected(cityName: String) -> Bool {
+        if let city = nsUserDefaultsInstance?.valueForKey(cityName) as? String {
+            return true
+        }
+        return false
+    }
     
     
     
