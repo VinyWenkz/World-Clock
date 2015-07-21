@@ -10,7 +10,7 @@
 			<key>country</key>
 			<string>China</string>
 			<key>time_zone</key>
-			<integer>28800</integer>
+			<real>28800</real>
 			<key>link</key>
 			<string>https://weather.yahoo.com/hong-kong/hong-kong-island/hong-kong-2165352/</string>
 			<key>image</key>

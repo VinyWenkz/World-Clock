@@ -11,11 +11,11 @@ import Foundation
 class City: NSObject {
     var name: String
     var country: String
-    var timeZone: String
+    var timeZone: NSTimeZone
     var link: String
     var imageName: String
     
-    init(name: String, country: String, timeZone: String, link: String, imageName: String) {
+    init(name: String, country: String, timeZone: NSTimeZone, link: String, imageName: String) {
         self.name = name
         self.country = country
         self.timeZone = timeZone
