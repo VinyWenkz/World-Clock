@@ -64,14 +64,11 @@ class CityDataStore: NSObject {
     }
     
     func switchSelectedCityIndex(fromIndexPath: NSIndexPath , toIndexPath: NSIndexPath) {
-        
         var cityToMove = self.selectedCities![fromIndexPath.row]
         self.selectedCities?.removeAtIndex(fromIndexPath.row)
         self.selectedCityNamesArray?.removeAtIndex(fromIndexPath.row)
-        
         self.selectedCities?.insert(cityToMove, atIndex: toIndexPath.row)
         self.selectedCityNamesArray?.insert(cityToMove.name, atIndex: toIndexPath.row)
-
         nsUserDefaultsServiceInstance?.removeArray(Constants.CITY_PLIST_SELECTED_ARRAY)
         nsUserDefaultsServiceInstance?.saveArray(selectedCityNamesArray!, key: Constants.CITY_PLIST_SELECTED_ARRAY)
     }
