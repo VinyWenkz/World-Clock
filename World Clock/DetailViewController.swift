@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var defaultDescriptionLabel: UILabel!
     @IBOutlet weak var cityWebView: UIWebView!
     
     var cityUrlRequest: NSURLRequest? {
@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
     func refreshCityWebView() {
         if let urlRequest = self.cityUrlRequest {
             if let webView = self.cityWebView {
+                self.cityWebView.hidden = false
                 webView.loadRequest(urlRequest)
             }
         }
@@ -31,8 +32,12 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.refreshCityWebView()
+
+        if cityUrlRequest == nil {
+            self.cityWebView.hidden = true
+        } else {
+            self.refreshCityWebView()
+        }
     }
 
     override func didReceiveMemoryWarning() {

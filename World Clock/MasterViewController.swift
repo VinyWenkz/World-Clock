@@ -9,11 +9,12 @@
 import UIKit
 
 class MasterViewController: UITableViewController, CityCrudDelegate {
-
+    
     var detailViewController: DetailViewController? = nil
     let worldClockController = WorldClockController.sharedWorldClockControllerInstance
-
-
+    
+    var leftBarButtonItem: UIBarButtonItem!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
@@ -21,11 +22,9 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
             self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
         
         if let split = self.splitViewController {
             let controllers = split.viewControllers
@@ -33,15 +32,20 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
         }
         
         worldClockController.cityDataStoreInstance?.addCityCrudDelegate(self)
+        self.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: "editBarButtonItemPressed")
+        removeEditBarButtonIfNeeded()
+       
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Segues
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
@@ -54,37 +58,40 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
+        } else if segue.identifier == "addRemoveCitySegue" {
+            self.editing = false
+            self.leftBarButtonItem.title = "Edit"
         }
     }
-
+    
     // MARK: - Table View
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let selectedCitiesNum = worldClockController.cityDataStoreInstance?.selectedCities?.count {
             return selectedCitiesNum
         }
         return 0
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-
+        
         if let selectedCities = worldClockController.cityDataStoreInstance?.selectedCities {
             let city = selectedCities[indexPath.row]
             cell.textLabel!.text = city.name
         }
         return cell
     }
-
+    
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-
+    
     override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
         
         return UITableViewCellEditingStyle.None
@@ -97,27 +104,35 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
     override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
         
         if let selectedCities = worldClockController.cityDataStoreInstance?.selectedCities {
-//            var itemToMove = selectedCities[sourceIndexPath.row]
-//            selectedCities.removeAtIndex(sourceIndexPath.row)
-//            selectedCities.insert(itemToMove, atIndex: destinationIndexPath.row)
             worldClockController.cityDataStoreInstance?.switchSelectedCityIndex(sourceIndexPath, toIndexPath: destinationIndexPath)
         }
     }
-
-    @IBAction func editBarButtonItemPressed(sender: UIBarButtonItem) {
+    
+    func editBarButtonItemPressed() {
         self.editing = !self.editing
         
         if self.editing {
-            sender.title = "Done"
+            self.leftBarButtonItem.title = "Done"
         } else {
-            sender.title = "Edit"
+            self.leftBarButtonItem.title = "Edit"
+        }
+    }
+    
+    func removeEditBarButtonIfNeeded() {
+        if worldClockController.cityDataStoreInstance?.selectedCities?.count < 2 {
+            self.navigationItem.leftBarButtonItem = nil
+        } else {
+            self.navigationItem.leftBarButtonItem = self.leftBarButtonItem
         }
     }
     
     func listUpdated() {
+        removeEditBarButtonIfNeeded()
         self.tableView.reloadData()
     }
-
-
+    
+   
+    
+    
 }
 
