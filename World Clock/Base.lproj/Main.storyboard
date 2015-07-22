@@ -45,19 +45,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hkO-y7-e5f" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="7UY-Kb-yXu"/>
+                            <constraint firstAttribute="trailing" secondItem="hkO-y7-e5f" secondAttribute="trailing" id="1V8-Pv-Amj"/>
+                            <constraint firstItem="hkO-y7-e5f" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="78w-4V-fIU"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
-                            <constraint firstAttribute="trailing" secondItem="hkO-y7-e5f" secondAttribute="trailing" id="a5B-cF-eul"/>
-                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="hkO-y7-e5f" secondAttribute="bottom" id="at8-Vl-PKy"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="hkO-y7-e5f" secondAttribute="bottom" id="U1V-7M-oXb"/>
+                            <constraint firstItem="hkO-y7-e5f" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="goy-PW-hr7"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
                             <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
-                            <constraint firstItem="hkO-y7-e5f" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="w5I-uj-R42"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
-                        <outlet property="cityWebView" destination="hkO-y7-e5f" id="pXB-mU-TtK"/>
+                        <outlet property="cityWebView" destination="hkO-y7-e5f" id="pdX-sd-JX0"/>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
                     </connections>
                 </viewController>
@@ -117,6 +117,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="eAM-qa-vWw">
+                            <connections>
+                                <action selector="editBarButtonItemPressed:" destination="7bK-jq-Zjz" id="FJu-49-O3D"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kKb-4l-AgF">
                             <connections>
                                 <segue destination="MUf-86-X7c" kind="show" id="VcV-pi-NiW"/>
