@@ -67,8 +67,13 @@ class CityDataStore: NSObject {
         
         var cityToMove = self.selectedCities![fromIndexPath.row]
         self.selectedCities?.removeAtIndex(fromIndexPath.row)
+        self.selectedCityNamesArray?.removeAtIndex(fromIndexPath.row)
+        
         self.selectedCities?.insert(cityToMove, atIndex: toIndexPath.row)
-        updateCityIndecesInUserDefaults()
+        self.selectedCityNamesArray?.insert(cityToMove.name, atIndex: toIndexPath.row)
+
+        nsUserDefaultsServiceInstance?.removeArray(Constants.CITY_PLIST_SELECTED_ARRAY)
+        nsUserDefaultsServiceInstance?.saveArray(selectedCityNamesArray!, key: Constants.CITY_PLIST_SELECTED_ARRAY)
     }
     
     
@@ -87,15 +92,7 @@ class CityDataStore: NSObject {
         }
         return -1
     }
-    
-    func updateCityIndecesInUserDefaults() {
-        removeAllSavedCities()
-        for var i = 0; i < self.selectedCities?.count; i++ {
-            if let city = self.selectedCities?[i] {
-                nsUserDefaultsServiceInstance?.saveInt(i, key: city.name)
-            }
-        }
-    }
+
     
     func findNextIndexInSelectedCityList() -> Int {
         if let nextIndex = selectedCities?.count {
@@ -150,12 +147,5 @@ class CityDataStore: NSObject {
             }
         }
         return nil
-    }
-    
-    
-    func removeAllSavedCities() {
-        for city in cities! {
-            nsUserDefaultsServiceInstance?.removeInt(city.name)
-        }
     }
 }
