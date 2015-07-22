@@ -41,16 +41,24 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkO-y7-e5f">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YfG-xJ-OmL">
+                                <rect key="frame" x="282" y="313" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hkO-y7-e5f" secondAttribute="trailing" id="1V8-Pv-Amj"/>
                             <constraint firstItem="hkO-y7-e5f" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="78w-4V-fIU"/>
+                            <constraint firstItem="YfG-xJ-OmL" firstAttribute="height" secondItem="svH-Pt-448" secondAttribute="height" constant="-563" id="T3H-Ae-A40"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="hkO-y7-e5f" secondAttribute="bottom" id="U1V-7M-oXb"/>
                             <constraint firstItem="hkO-y7-e5f" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="goy-PW-hr7"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
+                            <constraint firstItem="YfG-xJ-OmL" firstAttribute="top" secondItem="0XM-y9-sOw" secondAttribute="bottom" constant="4" id="nEr-nt-oSR"/>
                             <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
+                            <constraint firstItem="YfG-xJ-OmL" firstAttribute="centerX" secondItem="0XM-y9-sOw" secondAttribute="centerX" id="v0r-7Q-77C"/>
+                            <constraint firstItem="YfG-xJ-OmL" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" constant="-563" id="z1U-vs-WBV"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -58,6 +66,7 @@
                     <connections>
                         <outlet property="cityWebView" destination="hkO-y7-e5f" id="pdX-sd-JX0"/>
                         <outlet property="defaultDescriptionLabel" destination="0XM-y9-sOw" id="wod-hs-GVF"/>
+                        <outlet property="webViewActivityIndicator" destination="YfG-xJ-OmL" id="zWD-gh-lMO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
