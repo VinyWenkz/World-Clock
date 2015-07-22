@@ -15,7 +15,7 @@ class City: NSObject {
     var link: String
     var imageName: String
     var selected: Bool
-    
+
     init(name: String, country: String, timeZone: NSTimeZone, link: String,
         imageName: String, selected: Bool) {
         self.name = name

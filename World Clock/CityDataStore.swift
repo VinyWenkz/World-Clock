@@ -12,12 +12,18 @@ class CityDataStore: NSObject {
     var cities: [City]?
     var nsUserDefaultsServiceInstance: NSUserDefaultsService?
     var cityCrudDelegates: [CityCrudDelegate]?
+    var selectedCities: [City]?
+    var selectedCityNamesArray: [String]?
     
     init(nsUserDefaultsService: NSUserDefaultsService) {
         super.init()
         self.nsUserDefaultsServiceInstance = nsUserDefaultsService
         self.cityCrudDelegates = [CityCrudDelegate]()
         self.cities = loadCitiesInPList()
+        let cityTuple = loadSelectedCities()
+        self.selectedCities = cityTuple.selectedCities
+        self.selectedCityNamesArray = cityTuple.selectedCityNames
+        
     }
     
     func addCityCrudDelegate(cityCrudDelegate: CityCrudDelegate) {
@@ -42,21 +48,60 @@ class CityDataStore: NSObject {
     
     func setCityAsSelected(index: Int) {
         self.cities![index].selected = true
-        nsUserDefaultsServiceInstance?.saveString(self.cities![index].name,
-            key: self.cities![index].name)
+        self.selectedCities?.insert(self.cities![index], atIndex: findNextIndexInSelectedCityList())
+        self.selectedCityNamesArray?.insert(self.cities![index].name, atIndex: findNextIndexInSelectedCityList()-1)
+        nsUserDefaultsServiceInstance?.saveArray(self.selectedCityNamesArray!, key: Constants.CITY_PLIST_SELECTED_ARRAY)
         implementCityCrudDelegate()
     }
     
     func setCityAsDeselected(index: Int) {
-        nsUserDefaultsServiceInstance?.removeString(self.cities![index].name)
         self.cities![index].selected = false
+        self.selectedCities?.removeAtIndex(findIndexOfCity(self.cities![index].name))
+        self.selectedCityNamesArray?.removeAtIndex(findIndexOfCity(self.cities![index].name))
+        nsUserDefaultsServiceInstance?.removeArray(Constants.CITY_PLIST_SELECTED_ARRAY)
+        nsUserDefaultsServiceInstance?.saveArray(self.selectedCityNamesArray!, key: Constants.CITY_PLIST_SELECTED_ARRAY)
         implementCityCrudDelegate()
     }
+    
+    func switchSelectedCityIndex(fromIndexPath: NSIndexPath , toIndexPath: NSIndexPath) {
+        
+        var cityToMove = self.selectedCities![fromIndexPath.row]
+        self.selectedCities?.removeAtIndex(fromIndexPath.row)
+        self.selectedCities?.insert(cityToMove, atIndex: toIndexPath.row)
+        updateCityIndecesInUserDefaults()
+    }
+    
     
     func implementCityCrudDelegate() {
         for cityCrudDelegate in cityCrudDelegates! {
             cityCrudDelegate.listUpdated?()
         }
+    }
+
+    
+    func findIndexOfCity(cityName: String) -> Int {
+        for var i = 0; i < self.selectedCities?.count; i++ {
+            if cityName == self.selectedCities![i].name {
+                return i
+            }
+        }
+        return -1
+    }
+    
+    func updateCityIndecesInUserDefaults() {
+        removeAllSavedCities()
+        for var i = 0; i < self.selectedCities?.count; i++ {
+            if let city = self.selectedCities?[i] {
+                nsUserDefaultsServiceInstance?.saveInt(i, key: city.name)
+            }
+        }
+    }
+    
+    func findNextIndexInSelectedCityList() -> Int {
+        if let nextIndex = selectedCities?.count {
+            return nextIndex
+        }
+        return 0
     }
     
     private func loadCitiesInPList() -> [City] {
@@ -80,6 +125,37 @@ class CityDataStore: NSObject {
                 
         } else {
             return cityList
+        }
+    }
+    
+    func loadSelectedCities() -> (selectedCities: [City], selectedCityNames:[String]) {
+        var cityList = [City]()
+        var cityNameList = [String]()
+
+        if let cityNames = nsUserDefaultsServiceInstance?.getArray(Constants.CITY_PLIST_SELECTED_ARRAY) {
+            for cityName in cityNames {
+                cityList.append(self.findCityFromList(cityName as! String)!)
+            }
+            cityNameList = cityNames as! [String]
+        }
+
+        return (cityList, cityNameList)
+        
+    }
+    
+    func findCityFromList(cityName: String) -> City? {
+        for city in self.cities! {
+            if city.name == cityName {
+                return city
+            }
+        }
+        return nil
+    }
+    
+    
+    func removeAllSavedCities() {
+        for city in cities! {
+            nsUserDefaultsServiceInstance?.removeInt(city.name)
         }
     }
 }

@@ -11,8 +11,6 @@ import UIKit
 class MasterViewController: UITableViewController, CityCrudDelegate {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [AnyObject]()
-    var selectedCities = [City]()
     let worldClockController = WorldClockController.sharedWorldClockControllerInstance
 
 
@@ -35,18 +33,11 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
         }
         
         worldClockController.cityDataStoreInstance?.addCityCrudDelegate(self)
-        getSelectedCities()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    func insertNewObject(sender: AnyObject) {
-        objects.insert(NSDate(), atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
 
     // MARK: - Segues
@@ -55,8 +46,11 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                var urlRequest = NSURLRequest(URL: NSURL(string: selectedCities[indexPath.row].link)!)
-                controller.cityUrlRequest = urlRequest
+                
+                if let selectedCity = worldClockController.cityDataStoreInstance?.selectedCities![indexPath.row] {
+                    var urlRequest = NSURLRequest(URL: NSURL(string: selectedCity.link)!)
+                    controller.cityUrlRequest = urlRequest
+                }
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -70,14 +64,19 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectedCities.count
+        if let selectedCitiesNum = worldClockController.cityDataStoreInstance?.selectedCities?.count {
+            return selectedCitiesNum
+        }
+        return 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
 
-        let city = selectedCities[indexPath.row]
-        cell.textLabel!.text = city.name
+        if let selectedCities = worldClockController.cityDataStoreInstance?.selectedCities {
+            let city = selectedCities[indexPath.row]
+            cell.textLabel!.text = city.name
+        }
         return cell
     }
 
@@ -96,9 +95,13 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
     }
     
     override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        var itemToMove = selectedCities[sourceIndexPath.row]
-        selectedCities.removeAtIndex(sourceIndexPath.row)
-        selectedCities.insert(itemToMove, atIndex: destinationIndexPath.row)
+        
+        if let selectedCities = worldClockController.cityDataStoreInstance?.selectedCities {
+//            var itemToMove = selectedCities[sourceIndexPath.row]
+//            selectedCities.removeAtIndex(sourceIndexPath.row)
+//            selectedCities.insert(itemToMove, atIndex: destinationIndexPath.row)
+            worldClockController.cityDataStoreInstance?.switchSelectedCityIndex(sourceIndexPath, toIndexPath: destinationIndexPath)
+        }
     }
 
     @IBAction func editBarButtonItemPressed(sender: UIBarButtonItem) {
@@ -110,20 +113,8 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
             sender.title = "Edit"
         }
     }
-
-    func getSelectedCities() {
-        selectedCities.removeAll(keepCapacity: false)
-        if let cities = worldClockController.cityDataStoreInstance?.cities {
-            for city in cities {
-                if city.selected == true {
-                    selectedCities.append(city)
-                }
-            }
-        }
-    }
     
     func listUpdated() {
-        getSelectedCities()
         self.tableView.reloadData()
     }
 

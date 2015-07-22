@@ -18,4 +18,9 @@ class Constants {
     static let CITY_PLIST_TIME_ZONE_KEY = "time_zone"
     static let CITY_PLIST_LINK_KEY = "link"
     static let CITY_PLIST_IMAGE_KEY = "image"
+    
+    static let CITY_PLIST_SELECTED_ARRAY = "selectedCities.array"
+    
+    static let CITY_DICT_NAME = "city_name_in_dict"
+    static let CITY_DICT_INDEX = "city_index_in_dict"
 }
