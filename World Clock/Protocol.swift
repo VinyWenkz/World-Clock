@@ -10,6 +10,5 @@ import Foundation
 
 @objc
 protocol CityCrudDelegate {
-    optional func cityAdded()
-    optional func cityRemoved()
+    optional func listUpdated()
 }

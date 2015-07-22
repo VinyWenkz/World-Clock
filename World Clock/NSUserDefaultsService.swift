@@ -22,20 +22,6 @@ class NSUserDefaultsService: NSObject {
     func removeString(key: String) {
         nsUserDefaultsInstance?.removeObjectForKey(key)
     }
-    
-    func setCitySelected(cityName: String, cityCrudDelegateList: [CityCrudDelegate]) {
-        saveString(cityName, key: cityName)
-        for  cityCrudDelegate in cityCrudDelegateList {
-            cityCrudDelegate.cityAdded?()
-        }
-    }
-    
-    func setCityDeselected(cityName: String, cityCrudDelegateList: [CityCrudDelegate]) {
-        removeString(cityName)
-        for cityCrudDelegate in cityCrudDelegateList {
-            cityCrudDelegate.cityRemoved?()
-        }
-    }
 
     func isCitySelected(cityName: String) -> Bool {
         if let city = nsUserDefaultsInstance?.valueForKey(cityName) as? String {

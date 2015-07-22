@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FCD534E01B5E8B91004928C6 /* CityDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD534DF1B5E8B91004928C6 /* CityDataStore.swift */; };
+		FCD534E21B5E91D0004928C6 /* MasterListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD534E11B5E91D0004928C6 /* MasterListTableViewController.swift */; };
 		FCD73DB91B5E381A00F89BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD73DB81B5E381A00F89BFB /* AppDelegate.swift */; };
 		FCD73DBB1B5E381A00F89BFB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD73DBA1B5E381A00F89BFB /* MasterViewController.swift */; };
 		FCD73DBD1B5E381A00F89BFB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD73DBC1B5E381A00F89BFB /* DetailViewController.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FCD534DF1B5E8B91004928C6 /* CityDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDataStore.swift; sourceTree = "<group>"; };
+		FCD534E11B5E91D0004928C6 /* MasterListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterListTableViewController.swift; sourceTree = "<group>"; };
 		FCD73DB31B5E381A00F89BFB /* World Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD73DB71B5E381A00F89BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCD73DB81B5E381A00F89BFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 			children = (
 				FCD73DBA1B5E381A00F89BFB /* MasterViewController.swift */,
 				FCD73DBC1B5E381A00F89BFB /* DetailViewController.swift */,
+				FCD534E11B5E91D0004928C6 /* MasterListTableViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			children = (
 				FCD73DDD1B5E3BC400F89BFB /* NSUserDefaultsService.swift */,
 				FCD73DDF1B5E3D9600F89BFB /* City.swift */,
+				FCD534DF1B5E8B91004928C6 /* CityDataStore.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -269,9 +275,11 @@
 				FCD73DBD1B5E381A00F89BFB /* DetailViewController.swift in Sources */,
 				FCD73DBB1B5E381A00F89BFB /* MasterViewController.swift in Sources */,
 				FCD73DB91B5E381A00F89BFB /* AppDelegate.swift in Sources */,
+				FCD534E01B5E8B91004928C6 /* CityDataStore.swift in Sources */,
 				FCD73DE91B5E421900F89BFB /* Protocol.swift in Sources */,
 				FCD73DE01B5E3D9600F89BFB /* City.swift in Sources */,
 				FCD73DE71B5E41A200F89BFB /* Constants.swift in Sources */,
+				FCD534E21B5E91D0004928C6 /* MasterListTableViewController.swift in Sources */,
 				FCD73DDE1B5E3BC400F89BFB /* NSUserDefaultsService.swift in Sources */,
 				FCD73DE21B5E3E4500F89BFB /* WorldClockController.swift in Sources */,
 			);
@@ -471,6 +479,7 @@
 				FCD73DD61B5E381A00F89BFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCD73DD71B5E381A00F89BFB /* Build configuration list for PBXNativeTarget "World ClockTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +488,7 @@
 				FCD73DD91B5E381A00F89BFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
