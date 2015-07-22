@@ -20,7 +20,4 @@ class Constants {
     static let CITY_PLIST_IMAGE_KEY = "image"
     
     static let CITY_PLIST_SELECTED_ARRAY = "selectedCities.array"
-    
-    static let CITY_DICT_NAME = "city_name_in_dict"
-    static let CITY_DICT_INDEX = "city_index_in_dict"
 }

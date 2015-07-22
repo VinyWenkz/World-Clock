@@ -56,8 +56,8 @@ class CityDataStore: NSObject {
     
     func setCityAsDeselected(index: Int) {
         self.cities![index].selected = false
-        self.selectedCities?.removeAtIndex(findIndexOfCity(self.cities![index].name))
         self.selectedCityNamesArray?.removeAtIndex(findIndexOfCity(self.cities![index].name))
+        self.selectedCities?.removeAtIndex(findIndexOfCity(self.cities![index].name))
         nsUserDefaultsServiceInstance?.removeArray(Constants.CITY_PLIST_SELECTED_ARRAY)
         nsUserDefaultsServiceInstance?.saveArray(self.selectedCityNamesArray!, key: Constants.CITY_PLIST_SELECTED_ARRAY)
         implementCityCrudDelegate()
