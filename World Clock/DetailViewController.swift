@@ -11,28 +11,28 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    var detailItem: AnyObject? {
+    @IBOutlet weak var cityWebView: UIWebView!
+    
+    var cityUrlRequest: NSURLRequest? {
         didSet {
-            // Update the view.
-            self.configureView()
+            refreshCityWebView()
         }
     }
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+    
+    
+    func refreshCityWebView() {
+        if let urlRequest = self.cityUrlRequest {
+            if let webView = self.cityWebView {
+                webView.loadRequest(urlRequest)
             }
         }
     }
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+        self.refreshCityWebView()
     }
 
     override func didReceiveMemoryWarning() {
