@@ -43,7 +43,7 @@ class CityDataStore: NSObject {
     func setCityAsSelected(index: Int) {
         self.cities![index].selected = true
         nsUserDefaultsServiceInstance?.saveString(self.cities![index].name,
-            key: Constants.CITY_PLIST_NAME_KEY)
+            key: self.cities![index].name)
         for cityCrudDelegate in cityCrudDelegates! {
             cityCrudDelegate.listUpdated?()
         }
