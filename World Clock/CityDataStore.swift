@@ -44,14 +44,16 @@ class CityDataStore: NSObject {
         self.cities![index].selected = true
         nsUserDefaultsServiceInstance?.saveString(self.cities![index].name,
             key: self.cities![index].name)
-        for cityCrudDelegate in cityCrudDelegates! {
-            cityCrudDelegate.listUpdated?()
-        }
+        implementCityCrudDelegate()
     }
     
-    func setcityAsDeselected(index: Int) {
+    func setCityAsDeselected(index: Int) {
         nsUserDefaultsServiceInstance?.removeString(self.cities![index].name)
         self.cities![index].selected = false
+        implementCityCrudDelegate()
+    }
+    
+    func implementCityCrudDelegate() {
         for cityCrudDelegate in cityCrudDelegates! {
             cityCrudDelegate.listUpdated?()
         }

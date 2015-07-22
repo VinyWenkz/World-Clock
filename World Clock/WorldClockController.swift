@@ -30,7 +30,7 @@ class  WorldClockController {
     }
     
     func setCityDeselected(index: Int) {
-        cityDataStoreInstance?.setcityAsDeselected(index)
+        cityDataStoreInstance?.setCityAsDeselected(index)
     }
     
    
