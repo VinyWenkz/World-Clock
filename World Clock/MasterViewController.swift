@@ -86,13 +86,7 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
             cell.countryLabel.text = city.country
         }
         
-        if self.editing {
-            cell.timeLabel.hidden = true
-            cell.dateLabel.hidden = true
-        } else {
-            cell.timeLabel.hidden = false
-            cell.dateLabel.hidden = false
-        }
+        hideDateAndTimeIfNeeded(cell)
 
         return cell
     }
@@ -140,6 +134,16 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
             self.navigationItem.leftBarButtonItem = nil
         } else {
             self.navigationItem.leftBarButtonItem = self.leftBarButtonItem
+        }
+    }
+    
+    func hideDateAndTimeIfNeeded(cell: SelectedCityTableViewCell) {
+        if self.editing {
+            cell.timeLabel.hidden = true
+            cell.dateLabel.hidden = true
+        } else {
+            cell.timeLabel.hidden = false
+            cell.dateLabel.hidden = false
         }
     }
     
