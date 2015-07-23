@@ -34,9 +34,6 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
         worldClockController.cityDataStoreInstance?.addCityCrudDelegate(self)
         self.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: "editBarButtonItemPressed")
         removeEditBarButtonIfNeeded()
-       
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,6 +85,15 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
             cell.dateLabel.text = "12/01/15"
             cell.countryLabel.text = city.country
         }
+        
+        if self.editing {
+            cell.timeLabel.hidden = true
+            cell.dateLabel.hidden = true
+        } else {
+            cell.timeLabel.hidden = false
+            cell.dateLabel.hidden = false
+        }
+
         return cell
     }
     
@@ -114,7 +120,7 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
     override func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
     }
-
+    
     // MARK: - Own
     
     func editBarButtonItemPressed() {
@@ -125,6 +131,8 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
         } else {
             self.leftBarButtonItem.title = "Edit"
         }
+        
+        self.tableView.reloadData()
     }
     
     func removeEditBarButtonIfNeeded() {
@@ -142,7 +150,7 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
         self.tableView.reloadData()
     }
     
-   
+    
     
     
 }
