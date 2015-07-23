@@ -25,6 +25,8 @@ class TimerService: NSObject {
         timerUpdateDelegates = [TimerUpdateDelegate]()
     }
     
+    // MARK: - TimerUpdateDelegate
+
     func addTimerUpdateDelegate(timerUpdateDelegate: TimerUpdateDelegate) {
         self.timerUpdateDelegates?.append(timerUpdateDelegate)
     }

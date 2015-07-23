@@ -26,6 +26,8 @@ class CityDataStore: NSObject {
         
     }
     
+    // MARK: - CityCrudDelegate
+    
     func addCityCrudDelegate(cityCrudDelegate: CityCrudDelegate) {
         self.cityCrudDelegates?.append(cityCrudDelegate)
     }
@@ -41,6 +43,16 @@ class CityDataStore: NSObject {
             cityCrudDelegates?.removeAtIndex(index)
         }
     }
+    
+    
+    func implementCityCrudDelegate() {
+        for cityCrudDelegate in cityCrudDelegates! {
+            cityCrudDelegate.listUpdated?()
+        }
+    }
+
+    
+    // MARK: - cities
     
     func getCitiesCount() -> Int {
         return self.cities!.count
@@ -74,15 +86,7 @@ class CityDataStore: NSObject {
         nsUserDefaultsServiceInstance?.removeArray(Constants.CITY_PLIST_SELECTED_ARRAY)
         nsUserDefaultsServiceInstance?.saveArray(selectedCityNamesArray!, key: Constants.CITY_PLIST_SELECTED_ARRAY)
     }
-    
-    
-    func implementCityCrudDelegate() {
-        for cityCrudDelegate in cityCrudDelegates! {
-            cityCrudDelegate.listUpdated?()
-        }
-    }
 
-    
     func findIndexOfCity(cityName: String) -> Int {
         for var i = 0; i < self.selectedCities?.count; i++ {
             if cityName == self.selectedCities![i].name {
