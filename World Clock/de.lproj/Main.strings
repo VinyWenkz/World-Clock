@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "To begin, select a city for the World Clock."; ObjectID = "0XM-y9-sOw"; */
+"0XM-y9-sOw.text" = "To begin, select a city for the World Clock.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "70J-pi-Gka"; */
+"70J-pi-Gka.text" = "Label";
+
+/* Class = "UITableViewController"; title = "Master"; ObjectID = "7bK-jq-Zjz"; */
+"7bK-jq-Zjz.title" = "Master";
+
+/* Class = "UILabel"; text = "12:00 PM"; ObjectID = "Dt8-Fs-eFO"; */
+"Dt8-Fs-eFO.text" = "12:00 PM";
+
+/* Class = "UIViewController"; title = "Detail"; ObjectID = "JEX-9P-axG"; */
+"JEX-9P-axG.title" = "Detail";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Nxm-yX-1Nr"; */
+"Nxm-yX-1Nr.text" = "Title";
+
+/* Class = "UINavigationController"; title = "Master"; ObjectID = "RMx-3f-FxP"; */
+"RMx-3f-FxP.title" = "Master";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "X7X-Y4-soa"; */
+"X7X-Y4-soa.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "New York City"; ObjectID = "YtH-1Y-T4l"; */
+"YtH-1Y-T4l.text" = "New York City";
+
+/* Class = "UINavigationItem"; title = "World Clock"; ObjectID = "Zdf-7t-Un8"; */
+"Zdf-7t-Un8.title" = "World Clock";
+
+/* Class = "UINavigationItem"; title = "Weather"; ObjectID = "mOI-FS-AaM"; */
+"mOI-FS-AaM.title" = "Weather";
+
+/* Class = "UILabel"; text = "12 /01/ 15"; ObjectID = "xa0-ev-cI7"; */
+"xa0-ev-cI7.text" = "12 /01/ 15";

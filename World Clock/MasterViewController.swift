@@ -35,7 +35,7 @@ class MasterViewController: UITableViewController, CityCrudDelegate, TimerUpdate
         worldClockController.cityDataStoreInstance?.addCityCrudDelegate(self)
         worldClockController.timerService?.addTimerUpdateDelegate(self)
 
-        self.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: "editBarButtonItemPressed")
+        self.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("EDIT", comment: "Edit"), style: UIBarButtonItemStyle.Plain, target: self, action: "editBarButtonItemPressed")
         removeEditBarButtonIfNeeded()
     }
     
@@ -52,7 +52,7 @@ class MasterViewController: UITableViewController, CityCrudDelegate, TimerUpdate
     // MARK: - Segues
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == Constants.SEGUE_SHOW_DETAIL {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                 
@@ -63,13 +63,13 @@ class MasterViewController: UITableViewController, CityCrudDelegate, TimerUpdate
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
-        } else if segue.identifier == "addRemoveCitySegue" {
+        } else if segue.identifier == Constants.SEGUE_ADD_REMOVE_CITY {
             self.editing = false
-            self.leftBarButtonItem.title = "Edit"
+            self.leftBarButtonItem.title = NSLocalizedString("EDIT", comment: "Edit")
         }
     }
     @IBAction func addBarButtonPressed(sender: AnyObject) {
-        performSegueWithIdentifier("addRemoveCitySegue", sender: self)
+        performSegueWithIdentifier(Constants.SEGUE_ADD_REMOVE_CITY, sender: self)
     }
     
     // MARK: - Table View
@@ -86,13 +86,13 @@ class MasterViewController: UITableViewController, CityCrudDelegate, TimerUpdate
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("selectedCityCell", forIndexPath: indexPath) as! SelectedCityTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.CELL_ID_SELECTED_CITY, forIndexPath: indexPath) as! SelectedCityTableViewCell
         
         if let selectedCities = worldClockController.cityDataStoreInstance?.selectedCities {
             let city = selectedCities[indexPath.row]
             
             var timeAndDate = Utils.getFormattedCurrentDateAndTime(forTimeZone: city.timeZone,
-                withDateFormat: "mm/dd/yy", andTimeFormat: "hh:mm aa")
+                withDateFormat: Constants.DATE_FORMAT, andTimeFormat: Constants.TIME_FORMAT)
             
             cell.cityImageView?.image = UIImage(named: Utils.stripFilenameExtension(city.imageName))
             cell.nameLabel.text = city.name
@@ -136,9 +136,9 @@ class MasterViewController: UITableViewController, CityCrudDelegate, TimerUpdate
         self.editing = !self.editing
         
         if self.editing {
-            self.leftBarButtonItem.title = "Done"
+            self.leftBarButtonItem.title = NSLocalizedString("DONE", comment: "Done")
         } else {
-            self.leftBarButtonItem.title = "Edit"
+            self.leftBarButtonItem.title = NSLocalizedString("EDIT", comment: "Edit")
         }
         
         self.tableView.reloadData()

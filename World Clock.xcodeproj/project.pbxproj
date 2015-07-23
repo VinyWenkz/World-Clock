@@ -25,6 +25,7 @@
 		FCFBFC071B60CCFD00B9F8EA /* SelectedCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFC061B60CCFD00B9F8EA /* SelectedCityTableViewCell.swift */; };
 		FCFBFC091B60CE2B00B9F8EA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFC081B60CE2B00B9F8EA /* Utils.swift */; };
 		FCFBFC0B1B6104C300B9F8EA /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFC0A1B6104C300B9F8EA /* TimerService.swift */; };
+		FCFBFC181B6123E400B9F8EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCFBFC1A1B6123E400B9F8EA /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		FCFBFC061B60CCFD00B9F8EA /* SelectedCityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedCityTableViewCell.swift; sourceTree = "<group>"; };
 		FCFBFC081B60CE2B00B9F8EA /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FCFBFC0A1B6104C300B9F8EA /* TimerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
+		FCFBFC191B6123E400B9F8EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FCFBFC1B1B6123F500B9F8EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,7 @@
 			children = (
 				FCD73DB71B5E381A00F89BFB /* Info.plist */,
 				FCD73DEE1B5E568E00F89BFB /* Cities.plist */,
+				FCFBFC1A1B6123E400B9F8EA /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -260,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCFBFC181B6123E400B9F8EA /* Localizable.strings in Resources */,
 				FCD73DC01B5E381A00F89BFB /* Main.storyboard in Resources */,
 				FCD73DC51B5E381A00F89BFB /* LaunchScreen.xib in Resources */,
 				FCD73DC21B5E381A00F89BFB /* Images.xcassets in Resources */,
@@ -330,6 +335,15 @@
 				FCD73DC41B5E381A00F89BFB /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		FCFBFC1A1B6123E400B9F8EA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCFBFC191B6123E400B9F8EA /* en */,
+				FCFBFC1B1B6123F500B9F8EA /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

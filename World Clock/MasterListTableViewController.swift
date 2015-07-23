@@ -32,7 +32,7 @@ class MasterListTableViewController: UITableViewController, CityCrudDelegate {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cityCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.CELL_ID_CITY, forIndexPath: indexPath) as! UITableViewCell
         if let city = worldClockController.cityDataStoreInstance?.cities?[indexPath.row] {
             
             cell.textLabel!.text = city.name

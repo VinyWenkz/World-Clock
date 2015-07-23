@@ -19,7 +19,7 @@ class TimerService: NSObject {
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self,
             selector: "timerUpdated", userInfo: nil, repeats: true)
         var timeAndDate = Utils.getFormattedCurrentDateAndTime(forTimeZone: NSTimeZone(),
-            withDateFormat: "mm/dd/yy", andTimeFormat: "hh:mm aa")
+            withDateFormat: Constants.DATE_FORMAT, andTimeFormat: Constants.TIME_FORMAT)
         formattedDate = timeAndDate.formattedCurrentDate
         formattedTime = timeAndDate.formattedCurrentTime
         timerUpdateDelegates = [TimerUpdateDelegate]()
@@ -43,7 +43,7 @@ class TimerService: NSObject {
     
     func timerUpdated() {
         var timeAndDate = Utils.getFormattedCurrentDateAndTime(forTimeZone: NSTimeZone(),
-            withDateFormat: "mm/dd/yy", andTimeFormat: "hh:mm aa")
+            withDateFormat: Constants.DATE_FORMAT, andTimeFormat: Constants.TIME_FORMAT)
         if formattedDate != timeAndDate.formattedCurrentDate {
             formattedDate = timeAndDate.formattedCurrentDate
             

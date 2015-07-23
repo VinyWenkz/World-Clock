@@ -20,4 +20,14 @@ class Constants {
     static let CITY_PLIST_IMAGE_KEY = "image"
     
     static let CITY_PLIST_SELECTED_ARRAY = "selectedCities.array"
+    
+    static let DATE_FORMAT = "mm/dd/yy"
+    static let TIME_FORMAT = "hh:mm aa"
+    
+    static let SEGUE_ADD_REMOVE_CITY = "addRemoveCitySegue"
+    static let SEGUE_SHOW_DETAIL = "showDetail"
+    
+    static let CELL_ID_SELECTED_CITY = "selectedCityCell"
+    static let CELL_ID_CITY = "cityCell"
+    
 }
