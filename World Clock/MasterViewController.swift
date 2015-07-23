@@ -82,6 +82,7 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
         
         if let selectedCities = worldClockController.cityDataStoreInstance?.selectedCities {
             let city = selectedCities[indexPath.row]
+            cell.cityImageView?.image = UIImage(named: Utils.stripFilenameExtension(city.imageName))
             cell.nameLabel.text = city.name
             cell.timeLabel.text = "12:00"
             cell.dateLabel.text = "12/01/12"
@@ -91,9 +92,36 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if let city = worldClockController.cityDataStoreInstance?.selectedCities?[indexPath.row] {
-            cell.backgroundColor = UIColor(patternImage: UIImage(named: city.imageName)!)
-        }
+//        if let city = worldClockController.cityDataStoreInstance?.selectedCities?[indexPath.row] {
+//
+//            var cityImageView = UIImageView(image: UIImage(named: Utils.stripFilenameExtension(city.imageName)))
+//            cityImageView.frame = cell.bounds
+//            var overlayImageView = UIImageView(image: UIImage(named: "image_over_dark"))
+//            overlayImageView.frame = cell.bounds
+//            var subView1 = cityImageView
+//         
+//            var subView2 = overlayImageView
+//
+////            subView1.addSubview(subView2)
+//            
+//            var mainSubview = UIView(frame: cell.bounds)
+//            mainSubview.addSubview(subView1)
+//            mainSubview.addSubview(subView2)
+//            
+//            
+//            
+//            
+//            cell.backgroundView = mainSubview
+//            
+//
+//            
+//            
+////            cell.backgroundView = ((UIImageView(image: UIImage(named: Utils.stripFilenameExtension(city.imageName)))))
+////            cell.backgroundColor = UIColor(patternImage: UIImage(named: "image_over_dark")!)
+//            
+//        }
+        
+        //cell.backgroundView = [[UIImageView, alloc] initWithImage:[ [UIImage imageNamed:@"cell_normal.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0] ];
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
