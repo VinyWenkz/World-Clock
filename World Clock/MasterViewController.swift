@@ -78,17 +78,25 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("selectedCityCell", forIndexPath: indexPath) as! SelectedCityTableViewCell
         
         if let selectedCities = worldClockController.cityDataStoreInstance?.selectedCities {
             let city = selectedCities[indexPath.row]
-            cell.textLabel!.text = city.name
+            cell.nameLabel.text = city.name
+            cell.timeLabel.text = "12:00"
+            cell.dateLabel.text = "12/01/12"
+            cell.countryLabel.text = city.country
         }
         return cell
     }
     
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if let city = worldClockController.cityDataStoreInstance?.selectedCities?[indexPath.row] {
+            cell.backgroundColor = UIColor(patternImage: UIImage(named: city.imageName)!)
+        }
+    }
+    
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
     
@@ -108,6 +116,14 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
         }
     }
     
+    override func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    
+    
+    
+    // MARK: - Own
+    
     func editBarButtonItemPressed() {
         self.editing = !self.editing
         
@@ -125,6 +141,8 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
             self.navigationItem.leftBarButtonItem = self.leftBarButtonItem
         }
     }
+    
+    // MARK: - CountryCrudDelegate
     
     func listUpdated() {
         removeEditBarButtonIfNeeded()

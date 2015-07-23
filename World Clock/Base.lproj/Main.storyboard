@@ -98,30 +98,75 @@
         <scene sceneID="smW-Zh-WAh">
             <objects>
                 <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="World_Clock" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="selectedCityCell" rowHeight="160" id="Xaa-8V-cwk" customClass="SelectedCityTableViewCell" customModule="World_Clock" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xaa-8V-cwk" id="LGi-do-H16">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dt8-Fs-eFO" userLabel="time">
+                                            <rect key="frame" x="8" y="8" width="584" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="SBU-0M-983"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtH-1Y-T4l" userLabel="name">
+                                            <rect key="frame" x="8" y="92" width="584" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="Qbv-xl-TuZ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xa0-ev-cI7" userLabel="date">
+                                            <rect key="frame" x="8" y="46" width="584" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="pP9-Nx-iBA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70J-pi-Gka" userLabel="country">
+                                            <rect key="frame" x="8" y="130" width="584" height="21.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21.5" id="qCs-0P-GMU"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YtH-1Y-T4l" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" constant="8" id="5bU-zX-jtL"/>
+                                        <constraint firstItem="Dt8-Fs-eFO" firstAttribute="top" secondItem="LGi-do-H16" secondAttribute="top" constant="8" id="Mm9-bu-OPn"/>
+                                        <constraint firstAttribute="bottom" secondItem="70J-pi-Gka" secondAttribute="bottom" constant="8" id="U6b-yU-4pD"/>
+                                        <constraint firstItem="xa0-ev-cI7" firstAttribute="trailing" secondItem="LGi-do-H16" secondAttribute="trailingMargin" id="WXP-uO-N0P"/>
+                                        <constraint firstItem="xa0-ev-cI7" firstAttribute="top" secondItem="Dt8-Fs-eFO" secondAttribute="bottom" constant="3" id="Xs2-lw-kw2"/>
+                                        <constraint firstAttribute="trailing" secondItem="YtH-1Y-T4l" secondAttribute="trailing" constant="8" id="aEz-7i-aiV"/>
+                                        <constraint firstAttribute="trailing" secondItem="Dt8-Fs-eFO" secondAttribute="trailing" constant="8" id="dqX-rn-L4h"/>
+                                        <constraint firstItem="70J-pi-Gka" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" constant="8" id="kd2-dL-ris"/>
+                                        <constraint firstAttribute="trailing" secondItem="70J-pi-Gka" secondAttribute="trailing" constant="8" id="tQ3-f2-O0F"/>
+                                        <constraint firstItem="Dt8-Fs-eFO" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" constant="8" id="v7F-gs-XnV"/>
+                                        <constraint firstItem="xa0-ev-cI7" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leadingMargin" id="vhX-rK-ai5"/>
+                                        <constraint firstItem="70J-pi-Gka" firstAttribute="top" secondItem="YtH-1Y-T4l" secondAttribute="bottom" constant="3" id="vlV-fA-iLI"/>
+                                    </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
+                                    <outlet property="countryLabel" destination="70J-pi-Gka" id="OO6-WS-PId"/>
+                                    <outlet property="dateLabel" destination="xa0-ev-cI7" id="1dL-Ev-QO0"/>
+                                    <outlet property="nameLabel" destination="YtH-1Y-T4l" id="pkB-Oe-Ut7"/>
+                                    <outlet property="timeLabel" destination="Dt8-Fs-eFO" id="Dn4-Fq-cuv"/>
+                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="Egs-tq-bWQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -186,6 +231,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="Egs-tq-bWQ"/>
     </inferredMetricsTieBreakers>
 </document>
