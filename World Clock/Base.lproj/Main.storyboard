@@ -112,40 +112,40 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="4GW-Wf-iIF">
                                             <rect key="frame" x="0.0" y="99" width="600" height="52.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="52.5" id="CXy-9v-XBX"/>
+                                                <constraint firstAttribute="height" constant="52.5" id="T0A-MR-XIa"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dt8-Fs-eFO" userLabel="time">
-                                            <rect key="frame" x="17" y="8" width="567" height="35"/>
+                                            <rect key="frame" x="8" y="8" width="576" height="32"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="35" id="SBU-0M-983"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtH-1Y-T4l" userLabel="name">
-                                            <rect key="frame" x="16" y="99" width="568" height="36"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="36" id="Qbv-xl-TuZ"/>
+                                                <constraint firstAttribute="height" constant="32" id="N3P-FD-RHj"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 /01/ 15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xa0-ev-cI7" userLabel="date">
-                                            <rect key="frame" x="17" y="40" width="567" height="21"/>
+                                            <rect key="frame" x="8" y="39" width="576" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="pP9-Nx-iBA"/>
+                                                <constraint firstAttribute="height" constant="21" id="nId-x7-ZCh"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70J-pi-Gka" userLabel="country">
-                                            <rect key="frame" x="17" y="130" width="567" height="21.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtH-1Y-T4l" userLabel="name">
+                                            <rect key="frame" x="16" y="99" width="568" height="36"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21.5" id="qCs-0P-GMU"/>
+                                                <constraint firstAttribute="height" constant="36" id="Hsl-nH-MeI"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70J-pi-Gka" userLabel="country">
+                                            <rect key="frame" x="16" y="130" width="568" height="21.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21.5" id="uGu-TO-YMG"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -153,21 +153,21 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="4GW-Wf-iIF" secondAttribute="trailing" id="36z-Yl-VNm"/>
-                                        <constraint firstItem="YtH-1Y-T4l" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" constant="16" id="5bU-zX-jtL"/>
-                                        <constraint firstAttribute="bottom" secondItem="4GW-Wf-iIF" secondAttribute="bottom" constant="8" id="AwR-NT-gbe"/>
-                                        <constraint firstItem="Dt8-Fs-eFO" firstAttribute="top" secondItem="LGi-do-H16" secondAttribute="top" constant="8" id="Mm9-bu-OPn"/>
-                                        <constraint firstAttribute="bottom" secondItem="70J-pi-Gka" secondAttribute="bottom" constant="8" id="U6b-yU-4pD"/>
-                                        <constraint firstItem="xa0-ev-cI7" firstAttribute="trailing" secondItem="LGi-do-H16" secondAttribute="trailingMargin" constant="-8" id="WXP-uO-N0P"/>
-                                        <constraint firstItem="4GW-Wf-iIF" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" id="X0L-zp-YCz"/>
-                                        <constraint firstItem="xa0-ev-cI7" firstAttribute="top" secondItem="Dt8-Fs-eFO" secondAttribute="bottom" constant="-3" id="Xs2-lw-kw2"/>
-                                        <constraint firstAttribute="trailing" secondItem="YtH-1Y-T4l" secondAttribute="trailing" constant="16" id="aEz-7i-aiV"/>
-                                        <constraint firstAttribute="trailing" secondItem="Dt8-Fs-eFO" secondAttribute="trailing" constant="16" id="dqX-rn-L4h"/>
-                                        <constraint firstItem="70J-pi-Gka" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" constant="17" id="kd2-dL-ris"/>
-                                        <constraint firstAttribute="trailing" secondItem="70J-pi-Gka" secondAttribute="trailing" constant="16" id="tQ3-f2-O0F"/>
-                                        <constraint firstItem="Dt8-Fs-eFO" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" constant="17" id="v7F-gs-XnV"/>
-                                        <constraint firstItem="xa0-ev-cI7" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leadingMargin" constant="9" id="vhX-rK-ai5"/>
-                                        <constraint firstItem="70J-pi-Gka" firstAttribute="top" secondItem="YtH-1Y-T4l" secondAttribute="bottom" constant="-5" id="vlV-fA-iLI"/>
+                                        <constraint firstItem="YtH-1Y-T4l" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" constant="16" id="08I-lI-v6S"/>
+                                        <constraint firstItem="Dt8-Fs-eFO" firstAttribute="top" secondItem="LGi-do-H16" secondAttribute="top" constant="8" id="4Ks-De-CjZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="4GW-Wf-iIF" secondAttribute="bottom" constant="8" id="HBT-Ip-9lY"/>
+                                        <constraint firstAttribute="trailing" secondItem="Dt8-Fs-eFO" secondAttribute="trailing" constant="16" id="KWc-HV-dtY"/>
+                                        <constraint firstAttribute="bottom" secondItem="YtH-1Y-T4l" secondAttribute="bottom" constant="24.5" id="LJh-b9-LvW"/>
+                                        <constraint firstAttribute="trailing" secondItem="70J-pi-Gka" secondAttribute="trailing" constant="16" id="LMu-2M-gQf"/>
+                                        <constraint firstItem="70J-pi-Gka" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" constant="16" id="WXI-DF-NTj"/>
+                                        <constraint firstAttribute="bottom" secondItem="70J-pi-Gka" secondAttribute="bottom" constant="8" id="dbA-Cc-cNK"/>
+                                        <constraint firstItem="xa0-ev-cI7" firstAttribute="top" secondItem="LGi-do-H16" secondAttribute="top" constant="39" id="emc-1h-HOR"/>
+                                        <constraint firstAttribute="trailing" secondItem="xa0-ev-cI7" secondAttribute="trailing" constant="16" id="ibN-BQ-LYG"/>
+                                        <constraint firstAttribute="trailing" secondItem="4GW-Wf-iIF" secondAttribute="trailing" id="kfa-Hb-kBB"/>
+                                        <constraint firstItem="Dt8-Fs-eFO" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" constant="8" id="kwk-8J-2kd"/>
+                                        <constraint firstItem="xa0-ev-cI7" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" constant="8" id="n4v-2w-yTJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="YtH-1Y-T4l" secondAttribute="trailing" constant="16" id="xGK-ah-SJX"/>
+                                        <constraint firstItem="4GW-Wf-iIF" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" id="zuq-1U-c86"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
