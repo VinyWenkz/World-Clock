@@ -14,4 +14,24 @@ class Utils {
         let pathExtention = filename.pathExtension
         return filename.stringByDeletingPathExtension
     }
+    
+    static func getFormattedCurrentDateAndTime(forTimeZone timeZone: NSTimeZone,
+        withDateFormat dateFormat: String, andTimeFormat timeFormat: String ) -> (formattedCurrentDate: String, formattedCurrentTime: String) {
+        var time: NSDate = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.timeZone = timeZone
+//        formatter.dateFormat = "hh:mm aa"
+        formatter.dateFormat = dateFormat
+        
+        let formattedDate = formatter.stringFromDate(time)
+            
+            formatter.dateFormat = timeFormat
+        let formattedTime = formatter.stringFromDate(time)
+            
+            return (formattedDate, formattedTime)
+//        formatter.dateFormat = "EEEE, dd MMMM yyy"
+//        skylineCell?.skylineDateLabel.text = formatter.stringFromDate(time)
+    }
+    
+
 }

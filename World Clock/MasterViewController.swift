@@ -79,10 +79,14 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
         
         if let selectedCities = worldClockController.cityDataStoreInstance?.selectedCities {
             let city = selectedCities[indexPath.row]
+            
+            var timeAndDate = Utils.getFormattedCurrentDateAndTime(forTimeZone: city.timeZone,
+                withDateFormat: "mm/dd/yy", andTimeFormat: "hh:mm aa")
+            
             cell.cityImageView?.image = UIImage(named: Utils.stripFilenameExtension(city.imageName))
             cell.nameLabel.text = city.name
-            cell.timeLabel.text = "12:00 PM"
-            cell.dateLabel.text = "12/01/15"
+            cell.timeLabel.text = timeAndDate.formattedCurrentTime
+            cell.dateLabel.text = timeAndDate.formattedCurrentDate
             cell.countryLabel.text = city.country
         }
         
