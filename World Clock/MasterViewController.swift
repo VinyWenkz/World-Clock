@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController, CityCrudDelegate {
+class MasterViewController: UITableViewController, CityCrudDelegate, TimerUpdateDelegate {
     
     var detailViewController: DetailViewController? = nil
     let worldClockController = WorldClockController.sharedWorldClockControllerInstance
@@ -32,6 +32,8 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
         }
         
         worldClockController.cityDataStoreInstance?.addCityCrudDelegate(self)
+        worldClockController.timerService?.addTimerUpdateDelegate(self)
+
         self.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: "editBarButtonItemPressed")
         removeEditBarButtonIfNeeded()
     }
@@ -39,6 +41,11 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    deinit {
+        worldClockController.cityDataStoreInstance?.removeCityCrudDelegate(self)
+        worldClockController.timerService?.removeTimerUpdateDelegate(self)
     }
     
     // MARK: - Segues
@@ -155,6 +162,16 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
     
     func listUpdated() {
         removeEditBarButtonIfNeeded()
+        self.tableView.reloadData()
+    }
+    
+    // MARK: - TimerUpdateDelegate
+    
+    func changeDate() {
+        self.tableView.reloadData()
+    }
+    
+    func changeTime() {
         self.tableView.reloadData()
     }
     

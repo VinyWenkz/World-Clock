@@ -12,10 +12,12 @@ class  WorldClockController {
     
     var nsUserDefaultsInstance: NSUserDefaultsService?
     var cityDataStoreInstance: CityDataStore?
+    var timerService: TimerService?
     
     init() {
         nsUserDefaultsInstance = NSUserDefaultsService()
         cityDataStoreInstance = CityDataStore(nsUserDefaultsService: nsUserDefaultsInstance!)
+        timerService = TimerService()
     }
     
     class var sharedWorldClockControllerInstance: WorldClockController {

@@ -16,6 +16,10 @@ class MasterListTableViewController: UITableViewController, CityCrudDelegate {
         worldClockController.cityDataStoreInstance?.addCityCrudDelegate(self)
     }
     
+    deinit {
+        worldClockController.cityDataStoreInstance?.removeCityCrudDelegate(self)
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1;
     }

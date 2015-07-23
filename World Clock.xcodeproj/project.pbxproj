@@ -24,6 +24,7 @@
 		FCD73DEF1B5E568E00F89BFB /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCD73DEE1B5E568E00F89BFB /* Cities.plist */; };
 		FCFBFC071B60CCFD00B9F8EA /* SelectedCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFC061B60CCFD00B9F8EA /* SelectedCityTableViewCell.swift */; };
 		FCFBFC091B60CE2B00B9F8EA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFC081B60CE2B00B9F8EA /* Utils.swift */; };
+		FCFBFC0B1B6104C300B9F8EA /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFC0A1B6104C300B9F8EA /* TimerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		FCD73DEE1B5E568E00F89BFB /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
 		FCFBFC061B60CCFD00B9F8EA /* SelectedCityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedCityTableViewCell.swift; sourceTree = "<group>"; };
 		FCFBFC081B60CE2B00B9F8EA /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		FCFBFC0A1B6104C300B9F8EA /* TimerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				FCD73DDD1B5E3BC400F89BFB /* NSUserDefaultsService.swift */,
 				FCD73DDF1B5E3D9600F89BFB /* City.swift */,
 				FCD534DF1B5E8B91004928C6 /* CityDataStore.swift */,
+				FCFBFC0A1B6104C300B9F8EA /* TimerService.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				FCD73DBB1B5E381A00F89BFB /* MasterViewController.swift in Sources */,
 				FCD73DB91B5E381A00F89BFB /* AppDelegate.swift in Sources */,
 				FCFBFC071B60CCFD00B9F8EA /* SelectedCityTableViewCell.swift in Sources */,
+				FCFBFC0B1B6104C300B9F8EA /* TimerService.swift in Sources */,
 				FCD534E01B5E8B91004928C6 /* CityDataStore.swift in Sources */,
 				FCD73DE91B5E421900F89BFB /* Protocol.swift in Sources */,
 				FCD73DE01B5E3D9600F89BFB /* City.swift in Sources */,

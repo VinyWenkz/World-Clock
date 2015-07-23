@@ -12,3 +12,9 @@ import Foundation
 protocol CityCrudDelegate {
     optional func listUpdated()
 }
+
+@objc
+protocol TimerUpdateDelegate {
+    optional func changeDate()
+    optional func changeTime()
+}
