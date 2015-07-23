@@ -134,7 +134,9 @@ class CityDataStore: NSObject {
 
         if let cityNames = nsUserDefaultsServiceInstance?.getArray(Constants.CITY_PLIST_SELECTED_ARRAY) {
             for cityName in cityNames {
-                cityList.append(self.findCityFromList(cityName as! String)!)
+                if let foundCity = self.findCityFromList(cityName as! String) {
+                    cityList.append(foundCity)
+                }
             }
             cityNameList = cityNames as! [String]
         }

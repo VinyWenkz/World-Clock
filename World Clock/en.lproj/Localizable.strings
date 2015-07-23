@@ -8,3 +8,6 @@
 
 "EDIT" = "Edit";
 "DONE" = "Done";
+"OK" = "OK";
+"NOT_CONNECTED_TO_THE_INTERNET" = "Not Connected to the Internet";
+"CHECK_YOUR_INTERNET_CONNECTION" = "Please check your internet connection";

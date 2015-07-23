@@ -55,6 +55,14 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(webView: UIWebView) {
         self.webViewActivityIndicator.stopAnimating()
     }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+        self.webViewActivityIndicator.stopAnimating()
+        var alert = UIAlertView(title: NSLocalizedString("NOT_CONNECTED_TO_THE_INTERNET", comment: "Not Connected to the Internet"),
+            message: NSLocalizedString("CHECK_YOUR_INTERNET_CONNECTION", comment: "Please check your internet connection"), delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "OK"))
+        alert.show()
+        self.cityWebView.hidden = true
+    }
 
 }
 
