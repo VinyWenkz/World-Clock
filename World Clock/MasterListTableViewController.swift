@@ -52,9 +52,9 @@ class MasterListTableViewController: UITableViewController, CityCrudDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var city = worldClockController.cityDataStoreInstance?.cities![indexPath.row]
         if city?.selected == true {
-            worldClockController.setCityDeselected(indexPath.row)
+            worldClockController.cityDataStoreInstance?.setCityAsDeselected(indexPath.row)
         } else {
-            worldClockController.setCityAsSelected(indexPath.row)
+            worldClockController.cityDataStoreInstance?.setCityAsSelected(indexPath.row)
         }
     }
     

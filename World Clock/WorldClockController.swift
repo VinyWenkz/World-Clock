@@ -26,15 +26,6 @@ class  WorldClockController {
         }
         return WorldClockControllerSingleton.worldClockSingletonInstance
     }
-    
-    func setCityAsSelected(index: Int) {
-        cityDataStoreInstance?.setCityAsSelected(index)
-    }
-    
-    func setCityDeselected(index: Int) {
-        cityDataStoreInstance?.setCityAsDeselected(index)
-    }
-    
    
 }
 

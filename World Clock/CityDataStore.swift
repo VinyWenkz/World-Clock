@@ -49,7 +49,9 @@ class CityDataStore: NSObject {
     func setCityAsSelected(index: Int) {
         self.cities![index].selected = true
         self.selectedCities?.insert(self.cities![index], atIndex: findNextIndexInSelectedCityList())
+
         self.selectedCityNamesArray?.insert(self.cities![index].name, atIndex: findNextIndexInSelectedCityList()-1)
+
         nsUserDefaultsServiceInstance?.saveArray(self.selectedCityNamesArray!, key: Constants.CITY_PLIST_SELECTED_ARRAY)
         implementCityCrudDelegate()
     }

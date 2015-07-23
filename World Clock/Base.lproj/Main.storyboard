@@ -177,12 +177,26 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="World Clock" id="Zdf-7t-Un8">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kKb-4l-AgF">
+                        <barButtonItem key="rightBarButtonItem" id="1YJ-ZR-8IC">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="962-Tb-gB8">
+                                <rect key="frame" x="522" y="61" width="21" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="plusminus">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addBarButtonPressed:" destination="7bK-jq-Zjz" eventType="touchUpInside" id="775-7v-jGs"/>
+                                </connections>
+                            </button>
+                            <color key="tintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="MUf-86-X7c" kind="show" identifier="addRemoveCitySegue" id="VcV-pi-NiW"/>
+                                <segue destination="MUf-86-X7c" kind="show" identifier="addRemoveCitySegue" id="8NA-B3-BcP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addBarButton" destination="962-Tb-gB8" id="KFZ-GS-VYW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,6 +258,9 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plusminus" width="66" height="66"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Egs-tq-bWQ"/>
     </inferredMetricsTieBreakers>

@@ -13,6 +13,7 @@ class MasterViewController: UITableViewController, CityCrudDelegate, TimerUpdate
     var detailViewController: DetailViewController? = nil
     let worldClockController = WorldClockController.sharedWorldClockControllerInstance
     
+    @IBOutlet weak var addBarButton: UIButton!
     var leftBarButtonItem: UIBarButtonItem!
     
     override func awakeFromNib() {
@@ -66,6 +67,9 @@ class MasterViewController: UITableViewController, CityCrudDelegate, TimerUpdate
             self.editing = false
             self.leftBarButtonItem.title = "Edit"
         }
+    }
+    @IBAction func addBarButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("addRemoveCitySegue", sender: self)
     }
     
     // MARK: - Table View

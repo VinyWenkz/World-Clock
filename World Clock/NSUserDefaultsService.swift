@@ -46,6 +46,18 @@ class NSUserDefaultsService: NSObject {
         nsUserDefaultsInstance?.removeObjectForKey(key)
     }
     
+    func saveDictionary(dictionaryValue: NSDictionary, key: String) {
+        nsUserDefaultsInstance?.setObject(dictionaryValue, forKey: key)
+    }
+    
+    func removeDictionary(key: String) {
+        nsUserDefaultsInstance?.removeObjectForKey(key)
+    }
+    
+    func getDictionary(key: String) -> NSDictionary {
+        return nsUserDefaultsInstance?.objectForKey(key) as! NSDictionary
+    }
+    
     func getArray(key: String) -> [AnyObject] {
         if let arrayValue = nsUserDefaultsInstance?.objectForKey(key) as? [AnyObject] {
             return arrayValue
