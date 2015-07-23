@@ -10,7 +10,7 @@ import UIKit
 
 class MasterListTableViewController: UITableViewController, CityCrudDelegate {
     let worldClockController = WorldClockController.sharedWorldClockControllerInstance
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         worldClockController.cityDataStoreInstance?.addCityCrudDelegate(self)
@@ -29,14 +29,17 @@ class MasterListTableViewController: UITableViewController, CityCrudDelegate {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cityCell", forIndexPath: indexPath) as! UITableViewCell
-        var city = worldClockController.cityDataStoreInstance?.cities?[indexPath.row]
-       
-        cell.textLabel!.text = city?.name
-        
-        if city?.selected == true {
-            cell.accessoryType = .Checkmark
-        } else {
-            cell.accessoryType = .None
+        if let city = worldClockController.cityDataStoreInstance?.cities?[indexPath.row] {
+            
+            cell.textLabel!.text = city.name
+            cell.imageView?.image = UIImage(named: Utils.stripFilenameExtension(city.imageName))
+            cell.detailTextLabel?.text = city.country
+            
+            if city.selected == true {
+                cell.accessoryType = .Checkmark
+            } else {
+                cell.accessoryType = .None
+            }
         }
         
         return cell

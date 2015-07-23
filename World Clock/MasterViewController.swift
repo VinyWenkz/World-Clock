@@ -84,44 +84,11 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
             let city = selectedCities[indexPath.row]
             cell.cityImageView?.image = UIImage(named: Utils.stripFilenameExtension(city.imageName))
             cell.nameLabel.text = city.name
-            cell.timeLabel.text = "12:00"
-            cell.dateLabel.text = "12/01/12"
+            cell.timeLabel.text = "12:00 PM"
+            cell.dateLabel.text = "12/01/15"
             cell.countryLabel.text = city.country
         }
         return cell
-    }
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if let city = worldClockController.cityDataStoreInstance?.selectedCities?[indexPath.row] {
-//
-//            var cityImageView = UIImageView(image: UIImage(named: Utils.stripFilenameExtension(city.imageName)))
-//            cityImageView.frame = cell.bounds
-//            var overlayImageView = UIImageView(image: UIImage(named: "image_over_dark"))
-//            overlayImageView.frame = cell.bounds
-//            var subView1 = cityImageView
-//         
-//            var subView2 = overlayImageView
-//
-////            subView1.addSubview(subView2)
-//            
-//            var mainSubview = UIView(frame: cell.bounds)
-//            mainSubview.addSubview(subView1)
-//            mainSubview.addSubview(subView2)
-//            
-//            
-//            
-//            
-//            cell.backgroundView = mainSubview
-//            
-//
-//            
-//            
-////            cell.backgroundView = ((UIImageView(image: UIImage(named: Utils.stripFilenameExtension(city.imageName)))))
-////            cell.backgroundColor = UIColor(patternImage: UIImage(named: "image_over_dark")!)
-//            
-//        }
-        
-        //cell.backgroundView = [[UIImageView, alloc] initWithImage:[ [UIImage imageNamed:@"cell_normal.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0] ];
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -147,9 +114,7 @@ class MasterViewController: UITableViewController, CityCrudDelegate {
     override func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
     }
-    
-    
-    
+
     // MARK: - Own
     
     func editBarButtonItemPressed() {
