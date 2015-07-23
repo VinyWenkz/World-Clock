@@ -13,7 +13,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var defaultDescriptionLabel: UILabel!
     @IBOutlet weak var cityWebView: UIWebView!
     
-    @IBOutlet weak var webViewActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet var webViewActivityIndicator: UIActivityIndicatorView!
     var cityUrlRequest: NSURLRequest? {
         didSet {
             refreshCityWebView()
@@ -41,7 +41,6 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         }
         
         self.cityWebView.delegate = self
-        self.webViewActivityIndicator.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,12 +50,10 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     
     func webViewDidStartLoad(webView: UIWebView) {
         self.webViewActivityIndicator.startAnimating()
-        self.webViewActivityIndicator.hidden = false
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
         self.webViewActivityIndicator.stopAnimating()
-        self.webViewActivityIndicator.hidden = true
     }
 
 }
