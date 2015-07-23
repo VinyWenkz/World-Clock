@@ -109,6 +109,12 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xaa-8V-cwk" id="LGi-do-H16">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="4GW-Wf-iIF">
+                                            <rect key="frame" x="0.0" y="99" width="600" height="52.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="52.5" id="CXy-9v-XBX"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dt8-Fs-eFO" userLabel="time">
                                             <rect key="frame" x="17" y="8" width="567" height="35"/>
                                             <constraints>
@@ -147,10 +153,13 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="4GW-Wf-iIF" secondAttribute="trailing" id="36z-Yl-VNm"/>
                                         <constraint firstItem="YtH-1Y-T4l" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" constant="16" id="5bU-zX-jtL"/>
+                                        <constraint firstAttribute="bottom" secondItem="4GW-Wf-iIF" secondAttribute="bottom" constant="8" id="AwR-NT-gbe"/>
                                         <constraint firstItem="Dt8-Fs-eFO" firstAttribute="top" secondItem="LGi-do-H16" secondAttribute="top" constant="8" id="Mm9-bu-OPn"/>
                                         <constraint firstAttribute="bottom" secondItem="70J-pi-Gka" secondAttribute="bottom" constant="8" id="U6b-yU-4pD"/>
                                         <constraint firstItem="xa0-ev-cI7" firstAttribute="trailing" secondItem="LGi-do-H16" secondAttribute="trailingMargin" constant="-8" id="WXP-uO-N0P"/>
+                                        <constraint firstItem="4GW-Wf-iIF" firstAttribute="leading" secondItem="LGi-do-H16" secondAttribute="leading" id="X0L-zp-YCz"/>
                                         <constraint firstItem="xa0-ev-cI7" firstAttribute="top" secondItem="Dt8-Fs-eFO" secondAttribute="bottom" constant="-3" id="Xs2-lw-kw2"/>
                                         <constraint firstAttribute="trailing" secondItem="YtH-1Y-T4l" secondAttribute="trailing" constant="16" id="aEz-7i-aiV"/>
                                         <constraint firstAttribute="trailing" secondItem="Dt8-Fs-eFO" secondAttribute="trailing" constant="16" id="dqX-rn-L4h"/>
@@ -259,6 +268,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gradient" width="600" height="200"/>
         <image name="plusminus" width="66" height="66"/>
     </resources>
     <inferredMetricsTieBreakers>

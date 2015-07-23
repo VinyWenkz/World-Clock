@@ -21,7 +21,7 @@ class Constants {
     
     static let CITY_PLIST_SELECTED_ARRAY = "selectedCities.array"
     
-    static let DATE_FORMAT = "mm/dd/yy"
+    static let DATE_FORMAT = "MM/dd/yy"
     static let TIME_FORMAT = "hh:mm aa"
     
     static let SEGUE_ADD_REMOVE_CITY = "addRemoveCitySegue"
