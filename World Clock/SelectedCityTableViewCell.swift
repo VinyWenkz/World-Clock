@@ -18,6 +18,7 @@ class SelectedCityTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         cityImageView = UIImageView(frame: self.bounds)
+        cityImageView?.contentMode = UIViewContentMode.ScaleAspectFill
         cityImageView?.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
         var overlayImageView = UIImageView(image: UIImage(named: "image_over_dark"))
         overlayImageView.frame = self.bounds

@@ -72,7 +72,6 @@ class MasterViewController: UITableViewController, CityCrudDelegate, TimerUpdate
     }
     @IBAction func addBarButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier(Constants.SEGUE_ADD_REMOVE_CITY, sender: self)
-        editBarButtonItemPressed()
     }
     
     // MARK: - Table View
