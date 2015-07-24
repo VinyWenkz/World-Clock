@@ -136,6 +136,7 @@ class MasterViewController: UITableViewController, CityCrudDelegate, TimerUpdate
         return false
     }
     
+    
     // MARK: - Own
     
     func editBarButtonItemPressed() {
@@ -146,8 +147,12 @@ class MasterViewController: UITableViewController, CityCrudDelegate, TimerUpdate
         } else {
             self.leftBarButtonItem.title = NSLocalizedString("EDIT", comment: "Edit")
         }
+
+        var visibleCells = self.tableView.visibleCells() as! [SelectedCityTableViewCell]
         
-        self.tableView.reloadData()
+        for visibleCell in visibleCells {
+            hideDateAndTimeIfNeeded(visibleCell)
+        }
     }
     
     func removeEditBarButtonIfNeeded() {
