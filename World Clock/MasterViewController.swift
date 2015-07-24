@@ -37,6 +37,8 @@ class MasterViewController: UITableViewController, CityCrudDelegate, TimerUpdate
 
         self.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("EDIT", comment: "Edit"), style: UIBarButtonItemStyle.Plain, target: self, action: "editBarButtonItemPressed")
         removeEditBarButtonIfNeeded()
+        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -124,6 +126,10 @@ class MasterViewController: UITableViewController, CityCrudDelegate, TimerUpdate
         if let selectedCities = worldClockController.cityDataStoreInstance?.selectedCities {
             worldClockController.cityDataStoreInstance?.switchSelectedCityIndex(sourceIndexPath, toIndexPath: destinationIndexPath)
         }
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
     }
     
     override func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
