@@ -57,7 +57,7 @@ class TimerService: NSObject {
             formattedTime = timeAndDate.formattedCurrentTime
             
             for timerUpdateDelegate in self.timerUpdateDelegates! {
-                timerUpdateDelegate.changeDate?()
+                timerUpdateDelegate.changeTime?()
             }
         }
     }
